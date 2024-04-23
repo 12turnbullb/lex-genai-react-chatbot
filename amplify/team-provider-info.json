@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-lexgenaireactchatbot-dev-775df-authRole",
+      "UnauthRoleArn": "arn:aws:iam::767398076134:role/amplify-lexgenaireactchatbot-dev-775df-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::767398076134:role/amplify-lexgenaireactchatbot-dev-775df-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-lexgenaireactchatbot-dev-775df-deployment",
+      "UnauthRoleName": "amplify-lexgenaireactchatbot-dev-775df-unauthRole",
+      "StackName": "amplify-lexgenaireactchatbot-dev-775df",
+      "StackId": "arn:aws:cloudformation:us-east-1:767398076134:stack/amplify-lexgenaireactchatbot-dev-775df/0fda7600-01ad-11ef-810b-0afff13207f7",
+      "AmplifyAppId": "d1i63h5tmvg2bm"
+    },
+    "categories": {
+      "auth": {
+        "lexgenaireactchatbot12ed0e4e": {}
+      }
+    }
+  }
+}
