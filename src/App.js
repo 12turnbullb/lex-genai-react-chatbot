@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import "./App.css";
 import Footer from "./components/Footer";
 import HomeSimple from "./components/HomeSimple";
+import Header from "./components/Header";
 import { Amplify } from "aws-amplify";
 import awsconfig from "./aws-exports";
 import { withAuthenticator } from "@aws-amplify/ui-react";
@@ -19,6 +20,7 @@ class App extends Component {
   render() {
     return (
       <>
+        <Header />
         <HomeSimple />
         <Footer />
       </>
