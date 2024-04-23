@@ -21,7 +21,7 @@ class Header extends Component {
       console.log(`The username: ${username}`);
       console.log(`The userId: ${userId}`);
       console.log(`The signInDetails: ${signInDetails}`);
-      return username;
+      this.setState({ username });
     } catch (err) {
       console.log(err);
     }
@@ -30,8 +30,7 @@ class Header extends Component {
   // Grab the current username from the cognito auth API before we render the page
   // set the state and use it to render the welcome label
   componentWillMount() {
-    const user = this.currentAuthenticatedUser();
-    this.setState({ username: user });
+    this.currentAuthenticatedUser();
   }
 
   render() {
