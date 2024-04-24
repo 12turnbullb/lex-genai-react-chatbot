@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { signOut, getCurrentUser } from "aws-amplify/auth";
-import Home from "./Home";
 
 class Header extends Component {
   state = {
@@ -11,10 +10,28 @@ class Header extends Component {
   signOut = async () => {
     try {
       await signOut({ global: true });
+      this.unloadChatBot();
     } catch (error) {
       console.log("error signing out: ", error);
     }
   };
+
+  unloadChatBot() {
+    // add piece in here to unload the chatbot so it doesn't show on login screen
+    var chatbotDiv = document.getElementById("lex-web-ui-iframe");
+    if (chatbotDiv) {
+      chatbotDiv.remove();
+    }
+    // Remove the script tag
+    var chatbotScript = document.querySelector(
+      'script[src*="lex-web-ui-loader.min.js"]'
+    );
+    if (chatbotScript) {
+      chatbotScript.remove();
+    }
+    // Reset the global chatbot variable
+    window.ChatBotUiLoader = null;
+  }
 
   currentAuthenticatedUser = async () => {
     try {
@@ -27,6 +44,35 @@ class Header extends Component {
       console.log(err);
     }
   };
+
+  loadChatBotScript(new_user) {
+    if (window.ChatBotUiLoader) return; // If already loaded, do nothing
+    const script = document.createElement("script");
+    script.src =
+      "https://ddz1rykkqujp8.cloudfront.net/lex-web-ui-loader.min.js";
+    script.async = true;
+    script.onload = () => {
+      var loaderOpts = {
+        baseUrl: "https://ddz1rykkqujp8.cloudfront.net/",
+        shouldLoadMinDeps: true,
+      };
+      var loader = new window.ChatBotUiLoader.IframeLoader(loaderOpts);
+      var chatbotUiConfig = {
+        /* Example of setting session attributes on parent page */
+        lex: {
+          sessionAttributes: {
+            //userAgent: navigator.userAgent,
+            //QNAClientFilter: ''
+            initialEmail: new_user,
+          },
+        },
+      };
+      loader.load(chatbotUiConfig).catch(function (error) {
+        console.error(error);
+      });
+    };
+    document.body.appendChild(script);
+  }
 
   // Grab the current username from the cognito auth API before we render the page
   // set the state and use it to render the welcome label
@@ -75,7 +121,17 @@ class Header extends Component {
             </h2>
           </div>
         </section>
-        <Home user={this.state.username} />
+        <footer className="section-footer border-top padding-y">
+          <div className="container">
+            <button
+              type="button"
+              className="btn btn-primary"
+              onClick={() => this.loadChatBotScript(this.state.username)}
+            >
+              Launch Chat
+            </button>
+          </div>
+        </footer>
       </div>
     );
   }

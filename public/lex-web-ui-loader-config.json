@@ -47,11 +47,11 @@
     "toolbarEndLiveChatLabel": "End Live Chat",
     "toolbarStartLiveChatIcon": "people_alt",
     "toolbarEndLiveChatIcon": "call_end",
-    "positiveFeedbackIntent": "Thumbs up",
-    "negativeFeedbackIntent": "Thumbs down",
+    "positiveFeedbackIntent": "",
+    "negativeFeedbackIntent": "",
     "helpIntent": "Help",
     "minButtonContent": "",
-    "avatarImageUrl": "",
+    "avatarImageUrl": "bot-avatar.png",
     "backButton": false,
     "messageMenu": false,
     "hideButtonMessageBubble": true,
@@ -78,7 +78,7 @@
   },
   "iframe": {
     "iframeOrigin": "https://ddz1rykkqujp8.cloudfront.net",
-    "shouldLoadIframeMinimized": false,
+    "shouldLoadIframeMinimized": true,
     "iframeSrcPath": "/index.html#/?lexWebUiEmbed=true"
   }
 }
