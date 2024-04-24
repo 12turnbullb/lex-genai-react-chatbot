@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { signOut, getCurrentUser } from "aws-amplify/auth";
+import Home from "./Home";
 
 class Header extends Component {
   state = {
@@ -29,7 +30,7 @@ class Header extends Component {
 
   // Grab the current username from the cognito auth API before we render the page
   // set the state and use it to render the welcome label
-  componentWillMount() {
+  componentDidMount() {
     this.currentAuthenticatedUser();
   }
 
@@ -74,6 +75,7 @@ class Header extends Component {
             </h2>
           </div>
         </section>
+        <Home user={this.state.username} />
       </div>
     );
   }

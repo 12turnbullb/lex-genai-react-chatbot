@@ -1,8 +1,6 @@
-import logo from "./logo.svg";
 import React, { Component } from "react";
 import "./App.css";
 import Footer from "./components/Footer";
-import HomeSimple from "./components/HomeSimple";
 import Header from "./components/Header";
 import { Amplify } from "aws-amplify";
 import awsconfig from "./aws-exports";
@@ -21,7 +19,6 @@ class App extends Component {
     return (
       <>
         <Header />
-        <HomeSimple />
         <Footer />
       </>
     );

@@ -1,0 +1,84 @@
+{
+  "region": "us-east-1",
+  "cognito": {
+    "poolId": "us-east-1:ebce1c4d-2dee-4301-a8c7-2e52fd2146bf",
+    "appUserPoolClientId": "5g5q9hm1ef3ns1kl14q7pqtof3",
+    "appUserPoolName": "us-east-1_QWsJGdvCb",
+    "appDomainName": "lexkwebkuikcustomklexkidentitypoolconfigkho767398076134.auth.us-east-1.amazoncognito.com",
+    "aws_cognito_region": "us-east-1",
+    "region": "us-east-1"
+  },
+  "connect": {
+    "contactFlowId": "",
+    "instanceId": "",
+    "apiGatewayEndpoint": "",
+    "promptForNameMessage": "Before starting a live chat, please tell me your name?",
+    "waitingForAgentMessage": "Thanks for waiting. An agent will be with you when available.",
+    "waitingForAgentMessageIntervalSeconds": "60",
+    "agentJoinedMessage": "{Agent} has joined.",
+    "agentLeftMessage": "{Agent} has left.",
+    "chatEndedMessage": "Chat ended.",
+    "attachChatTranscript": "false",
+    "liveChatTerms": "live chat",
+    "transcriptMessageDelayInMsec": "150"
+  },
+  "lex": {
+    "v2BotId": "WBMNDR76EV",
+    "v2BotAliasId": "TSTALIASID",
+    "v2BotLocaleId": "en_US",
+    "botName": "WBMNDR76EV",
+    "botAlias": "$LATEST",
+    "initialText": "",
+    "initialSpeechInstruction": "Say 'Order Flowers' to get started.",
+    "initialUtterance": "Hi",
+    "reInitSessionAttributesOnRestart": false,
+    "region": "us-east-1",
+    "retryOnLexPostTextTimeout": "false",
+    "retryCountPostTextTimeout": "1",
+    "allowStreamingResponses": false,
+    "streamingWebSocketEndpoint": "",
+    "streamingDynamoDbTable": ""
+  },
+  "ui": {
+    "parentOrigin": "http://localhost:3000",
+    "toolbarTitle": "AI Assistant",
+    "toolbarLogo": "",
+    "toolbarStartLiveChatLabel": "Start Live Chat",
+    "toolbarEndLiveChatLabel": "End Live Chat",
+    "toolbarStartLiveChatIcon": "people_alt",
+    "toolbarEndLiveChatIcon": "call_end",
+    "positiveFeedbackIntent": "Thumbs up",
+    "negativeFeedbackIntent": "Thumbs down",
+    "helpIntent": "Help",
+    "minButtonContent": "",
+    "avatarImageUrl": "",
+    "backButton": false,
+    "messageMenu": false,
+    "hideButtonMessageBubble": true,
+    "enableLogin": false,
+    "enableLiveChat": false,
+    "forceLogin": false,
+    "enableUpload": false,
+    "uploadS3BucketName": "",
+    "AllowSuperDangerousHTMLInMessage": true,
+    "shouldDisplayResponseCardTitle": false,
+    "saveHistory": false,
+    "helpContent": {},
+    "enableSFX": false,
+    "hideInputFieldsForButtonResponse": false,
+    "pushInitialTextOnRestart": false,
+    "directFocusToBotInput": false,
+    "showDialogStateIcon": false
+  },
+  "polly": {
+    "voiceId": "Salli"
+  },
+  "recorder": {
+    "preset": "speech_recognition"
+  },
+  "iframe": {
+    "iframeOrigin": "https://ddz1rykkqujp8.cloudfront.net",
+    "shouldLoadIframeMinimized": false,
+    "iframeSrcPath": "/index.html#/?lexWebUiEmbed=true"
+  }
+}
