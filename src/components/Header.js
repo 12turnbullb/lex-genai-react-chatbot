@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { signOut, getCurrentUser } from "aws-amplify/auth";
+import Content from "./Content";
 
 class Header extends Component {
   state = {
@@ -45,35 +46,6 @@ class Header extends Component {
     }
   };
 
-  loadChatBotScript(new_user) {
-    if (window.ChatBotUiLoader) return; // If already loaded, do nothing
-    const script = document.createElement("script");
-    script.src =
-      "https://ddz1rykkqujp8.cloudfront.net/lex-web-ui-loader.min.js";
-    script.async = true;
-    script.onload = () => {
-      var loaderOpts = {
-        baseUrl: "https://ddz1rykkqujp8.cloudfront.net/",
-        shouldLoadMinDeps: true,
-      };
-      var loader = new window.ChatBotUiLoader.IframeLoader(loaderOpts);
-      var chatbotUiConfig = {
-        /* Example of setting session attributes on parent page */
-        lex: {
-          sessionAttributes: {
-            //userAgent: navigator.userAgent,
-            //QNAClientFilter: ''
-            initialEmail: new_user,
-          },
-        },
-      };
-      loader.load(chatbotUiConfig).catch(function (error) {
-        console.error(error);
-      });
-    };
-    document.body.appendChild(script);
-  }
-
   // Grab the current username from the cognito auth API before we render the page
   // set the state and use it to render the welcome label
   componentDidMount() {
@@ -89,7 +61,7 @@ class Header extends Component {
               <div className="row  align-items-center">
                 <div className="col-lg">
                   <a href="/#" className="brand-wrap float-md-left">
-                    Sample Web App
+                    Sample Organization
                   </a>
                 </div>
                 <div className="col-lg">
@@ -114,24 +86,9 @@ class Header extends Component {
             </div>
           </section>
         </header>
-        <section className="section-pagetop bg">
-          <div className="container">
-            <h2 className="title-page" style={{ color: "#186f99" }}>
-              Welcome to the Sample React App for Amazon Lex with Bedrock
-            </h2>
-          </div>
-        </section>
-        <footer className="section-footer border-top padding-y">
-          <div className="container">
-            <button
-              type="button"
-              className="btn btn-primary"
-              onClick={() => this.loadChatBotScript(this.state.username)}
-            >
-              Launch Chat
-            </button>
-          </div>
-        </footer>
+        <div className="container">
+          <Content username={this.state.username} />
+        </div>
       </div>
     );
   }

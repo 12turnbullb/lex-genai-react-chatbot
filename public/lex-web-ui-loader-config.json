@@ -40,7 +40,7 @@
     "streamingDynamoDbTable": ""
   },
   "ui": {
-    "parentOrigin": "http://localhost:3000",
+    "parentOrigin": "https://main.d1i63h5tmvg2bm.amplifyapp.com/",
     "toolbarTitle": "AI Assistant",
     "toolbarLogo": "",
     "toolbarStartLiveChatLabel": "Start Live Chat",
