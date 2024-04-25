@@ -42,7 +42,7 @@ class Content extends Component {
               <h1 className="header" style={{ color: "#186f99" }}>
                 Welcome to Our Sample Organization
               </h1>
-              <p className="subtitle">Discover the best chat experience</p>
+              <p className="subtitle">Discover a generative chat experience</p>
               <button
                 type="button"
                 className="btn btn-primary"

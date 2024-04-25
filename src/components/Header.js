@@ -86,7 +86,7 @@ class Header extends Component {
             </div>
           </section>
         </header>
-        <div className="container">
+        <div>
           <Content username={this.state.username} />
         </div>
       </div>
